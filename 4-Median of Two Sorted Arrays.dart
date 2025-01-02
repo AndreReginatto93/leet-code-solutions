@@ -5,8 +5,6 @@ class Solution {
     if (sortedArrays.length % 2 == 1)
       return sortedArrays[(sortedArrays.length / 2).floor()].toDouble();
     else {
-      // print((sortedArrays.length / 2).round());
-      // print(sortedArrays[(sortedArrays.length / 2).round()].toDouble());
       return (sortedArrays[(sortedArrays.length / 2).round() - 1].toDouble() +
               sortedArrays[(sortedArrays.length / 2).round()].toDouble()) /
           2;
