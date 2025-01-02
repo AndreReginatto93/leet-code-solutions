@@ -13,6 +13,10 @@ class Solution {
 
     if (negative) reversedNumber *= -1;
 
+    if (reversedNumber >= 2147483648 || reversedNumber < -2147483648) return 0;
+
+    print(reversedNumber);
+
     return reversedNumber;
   }
 }
@@ -23,4 +27,5 @@ void main() {
   solution.reverse(123);
   solution.reverse(-321);
   solution.reverse(120);
+  solution.reverse(1534236469);
 }
