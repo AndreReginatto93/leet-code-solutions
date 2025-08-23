@@ -1,0 +1,40 @@
+
+import java.util.HashMap;
+
+class Solution {
+
+    public static void main(String[] args) {
+        System.out.println(romanToInt("LVIII"));
+        System.out.println(romanToInt("MCMXCIV"));
+    }
+
+    public static int romanToInt(String s) {
+        HashMap<Character, Integer> map = new HashMap<>();
+        map.put('I', 1);
+        map.put('V', 5);
+        map.put('X', 10);
+        map.put('L', 50);
+        map.put('C', 100);
+        map.put('D', 500);
+        map.put('M', 1000);
+
+        int total = 0;
+        int lastNumber = 0;
+
+        // Loop from right to left
+        for (int i = s.length() - 1; i >= 0; i--) {
+            char character = s.charAt(i);
+            int currentNumber = map.get(character);
+
+            if (currentNumber < lastNumber) {
+                total -= currentNumber;
+            } else {
+                total += currentNumber;
+            }
+
+            lastNumber = currentNumber;
+        }
+
+        return total;
+    }
+}
